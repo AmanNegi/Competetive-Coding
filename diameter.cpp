@@ -58,7 +58,7 @@ pair<int, int> recursiveDiameter(Node *node)
 
 	pair<int, int> ans;
 	ans.first = max(max(lTree.first, rTree.first), (lTree.second + rTree.second + 1));
-	ans.second = max(lTree.first, rTree.second) + 1;
+	ans.second = max(lTree.second, rTree.second) + 1;
 
 	return ans;
 }
@@ -78,7 +78,6 @@ int main()
 		head = insert(head, n, s);
 	}
 	pair<int, int> diameter = recursiveDiameter(head);
-	printTree(head);cout<<endl;
-	cout <<  max(diameter.first, diameter.second) << endl;
+	cout <<  max(diameter.first, diameter.second) ;
 	return 0;
 }
